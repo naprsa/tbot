@@ -41,4 +41,5 @@ class ThrottlingMiddleware(BaseMiddleware):
             await message.reply("Слишком часто отправляете сообщения")
         elif throttled.exceeded_count == 3:
             await message.reply("Придется подождать 10 секунд....")
-        await asyncio.sleep(delta)
+        # await asyncio.sleep(delta)
+        # await message.answer('Все, вы разблокированы!')
