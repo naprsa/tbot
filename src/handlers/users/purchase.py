@@ -25,3 +25,9 @@ async def buying_pear(call: types.CallbackQuery, callback_data: dict):
     await call.message.answer(
         f"Вы выбюрали купить грушу,  всего {quantity}", reply_markup=pear_keyboard
     )
+
+
+@dp.callback_query_handler(text="cancel")
+async def cancel(call: types.CallbackQuery):
+    await call.answer("Вы нажали отмена", show_alert=True)
+    await call.message.edit_reply_markup()
