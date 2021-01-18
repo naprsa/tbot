@@ -1,6 +1,6 @@
 from loguru import logger
 from aiogram import Dispatcher
-from src.data.config import admins
+from src.core.config import admins
 
 
 async def on_startup_notify(dp: Dispatcher):

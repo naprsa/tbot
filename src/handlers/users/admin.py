@@ -3,7 +3,7 @@ from aiogram import types
 from src.filters import IsPrivate
 from src.loader import dp
 
-from src.data.config import admins
+from src.core.config import admins
 
 
 @dp.message_handler(IsPrivate(), text="secret", user_id=admins)
