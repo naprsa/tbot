@@ -7,7 +7,9 @@ from src.states import Test
 
 
 @dp.message_handler(Command("test"))
-async def enter_test(message: types.Message):
+async def enter_test(message: types.Message, state: FSMContext):
+    data = await state.get_data()
+    await message.answer(str(data))
     await message.answer(
         "вы начали тестирование. \n" "Вопрос 1. \n\n" "вы часто занимаетесь херней?"
     )
@@ -31,12 +33,12 @@ async def answer_q1(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state=Test.Q2)
 async def answer_q1(message: types.Message, state: FSMContext):
+
+    async with state.proxy() as data:
+        data["answer2"] = message.text
+
     data = await state.get_data()
-    answer1 = data.get("answer1")
-    answer2 = message.text
-
     await message.answer("Спасибо за ответы!")
-    await message.answer(f"{answer1}")
-    await message.answer(f"{answer2}")
-
-    await state.finish()
+    await message.answer(str(data))
+    # await state.finish()
+    await state.reset_state(with_data=False)

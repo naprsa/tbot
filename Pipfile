@@ -26,6 +26,7 @@ typing-extensions = "==3.7.4.3"
 yarl = "==1.6.3"
 Babel = "==2.9.0"
 loguru = "*"
+aioredis = "*"
 
 [dev-packages]
 
