@@ -1,9 +1,9 @@
 from aiogram import types
 
-from filters import IsPrivate
-from loader import dp
+from src.filters import IsPrivate
+from src.loader import dp
 
-from data.config import admins
+from src.data.config import admins
 
 
 @dp.message_handler(IsPrivate(), text="secret", user_id=admins)

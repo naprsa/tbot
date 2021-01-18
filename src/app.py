@@ -1,7 +1,8 @@
+from aiogram import Dispatcher
 from utils.set_bot_commands import set_default_commands
 
 
-async def on_startup(dp):
+async def on_startup(dp: Dispatcher) -> None:
     import filters
 
     #     import middlewares

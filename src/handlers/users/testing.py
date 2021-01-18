@@ -1,9 +1,9 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Command
 
-from loader import dp
+from src.loader import dp
 from aiogram import types
-from states import Test
+from src.states import Test
 
 
 @dp.message_handler(Command("test"))
