@@ -1,5 +1,5 @@
-from .help import dp
 from .testing import dp
+from .help import dp
 from .start import dp
 from .admin import dp
 
